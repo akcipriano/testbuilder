@@ -26,6 +26,12 @@ var detectNetwork = function(cardNumber) {
   	}
   }
 
+  if (cardNumber.length === 16 || cardNumber.length === 18 || cardNumber.length === 19){
+    if (cardNumber.slice(0, 4) === '4903' ||cardNumber.slice(0, 4) === '4905' || cardNumber.slice(0, 4) === '4911' || cardNumber.slice(0, 4) === '4936' || cardNumber.slice(0, 4) === '6333' || cardNumber.slice(0, 4) === '6759' || cardNumber.slice(0, 6) === '564182' || cardNumber.slice(0, 6) === '633110'){
+      return "Switch"
+    }
+  }
+
   if (cardNumber.length === 13 || cardNumber.length === 16 || cardNumber.length === 19){
   	if (cardNumber[0] === '4'){
   		return "Visa";
