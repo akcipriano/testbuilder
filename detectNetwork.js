@@ -44,6 +44,11 @@ var detectNetwork = function(cardNumber) {
     }
   }
 
-};
+  if(cardNumber.length >= 12 && cardNumber.length <= 19){
+    if (cardNumber.slice (0, 4) === '5018' || cardNumber.slice (0, 4) === '5020' || cardNumber.slice (0, 4) === '5038' || cardNumber.slice (0, 4) === '6304'){
+      return 'Maestro'
+    }
+  }
 
+};
 
