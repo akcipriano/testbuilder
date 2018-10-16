@@ -31,5 +31,10 @@ var detectNetwork = function(cardNumber) {
   		return "Visa";
   	}
   }
-};
 
+  if (cardNumber.length === 16){
+  	if (cardNumber.slice(0, 2) === '51' || cardNumber.slice(0, 2) === '52' || cardNumber.slice(0, 2) === '53' || cardNumber.slice(0, 2) === '54' || cardNumber.slice(0,2) === '55'){
+  		return "MasterCard";
+  	}
+  }
+};
