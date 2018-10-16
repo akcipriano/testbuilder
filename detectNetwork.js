@@ -20,6 +20,12 @@ var detectNetwork = function(cardNumber) {
   	}
   }
 
+  if (cardNumber.length === 15){
+  	if (cardNumber.slice(0, 2) === '34' || cardNumber.slice(0, 2) === '37'){
+  		return "American Express"
+  	}
+  }
+
 };
 
 
