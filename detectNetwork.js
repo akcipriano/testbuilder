@@ -16,16 +16,20 @@ var detectNetwork = function(cardNumber) {
 
   if (cardNumber.length === 14){
   	if (cardNumber.slice(0, 2) === '38' || cardNumber.slice(0, 2) === '39'){
-  		return "Diner's Club"
+  		return "Diner's Club";
   	}
   }
 
   if (cardNumber.length === 15){
   	if (cardNumber.slice(0, 2) === '34' || cardNumber.slice(0, 2) === '37'){
-  		return "American Express"
+  		return "American Express";
   	}
   }
 
+  if (cardNumber.length === 13 || cardNumber.length === 16 || cardNumber.length === 19){
+  	if (cardNumber[0] === '4'){
+  		return "Visa";
+  	}
+  }
 };
-
 
