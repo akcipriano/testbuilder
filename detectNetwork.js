@@ -37,4 +37,13 @@ var detectNetwork = function(cardNumber) {
   		return "MasterCard";
   	}
   }
+
+  if (cardNumber.length === 16 || cardNumber.length === 19){
+    if (cardNumber.slice (0, 4) === '6011' || cardNumber.slice(0, 2) === '65' || (Number(cardNumber.slice(0, 3)) >= 644 && Number(cardNumber.slice(0, 3)) <= 649) ){
+      return 'Discover';
+    }
+  }
+
 };
+
+
