@@ -52,9 +52,13 @@ var detectNetwork = function(cardNumber) {
 
   if(cardNumber.length >= 12 && cardNumber.length <= 19){
     if (cardNumber.slice (0, 4) === '5018' || cardNumber.slice (0, 4) === '5020' || cardNumber.slice (0, 4) === '5038' || cardNumber.slice (0, 4) === '6304'){
-      return 'Maestro'
+      return 'Maestro';
     }
   }
 
+  if (cardNumber.length >= 16 && cardNumber.length <= 19){
+    if ((Number(cardNumber.slice(0,6)) >= 622126 && Number(cardNumber.slice(0,6)) <= 622925) || (Number(cardNumber.slice(0,3)) >= 624 && Number(cardNumber.slice(0,3)) <= 626) || (Number(cardNumber.slice(0,4)) >= 6282 && Number(cardNumber.slice(0,4)) <= 6288)){
+      return 'China UnionPay';
+    }
+  }
 };
-
